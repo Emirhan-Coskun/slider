@@ -37,7 +37,10 @@ class Slider {
             this.index = this.imageList.length - 1;
         }
     }
-
+    
+    getBaslik(){
+        baslik.innerHTML = "Resim" + " " + Number(this.index + 1) +"/" + this.imageList.length 
+    }
 };
 
 const slider = new Slider(imageList);
@@ -46,19 +49,23 @@ let img = slider.getImage();
 const next = document.querySelector("#next");
 const prev = document.querySelector("#prev");
 const image = document.querySelector("#image");
+const baslik = document.querySelector(".baslik");
 const imgBox = image.parentElement.parentElement;
 
 window.addEventListener("load", () => {
     let img = slider.getImage();
     displayImage(img);
+    slider.getBaslik();
 });
 
 prev.addEventListener("click", () => {
     prevImage();
+    slider.getBaslik();
 });
 
 next.addEventListener("click", () => {
     nextImage();
+    slider.getBaslik();
 });
 
 function nextImage() {
@@ -85,5 +92,3 @@ function displayImage(img) {
 function fade() {
     imgBox.classList.remove("fade");
 };
-
-
