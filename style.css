@@ -2,13 +2,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 
 .slider-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     position: relative;
     width: fit-content;
 }
@@ -56,8 +56,51 @@ img {
 }
 
 .baslik {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    left: 50%;
     font-weight: bolder;
+    position: absolute;
+    bottom: 5px;
+    color: white;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    opacity: 0.90;
 }
+
+.img-box {
+    position: relative;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    text-decoration: none !important;
+    list-style: none !important;
+}
+
+.dots {
+    display: flex;
+    justify-content: center; 
+    margin-top: 20px;
+}
+
+.dot {
+    background-color: #D3D3D3;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: gray 1px solid;
+    cursor: pointer;
+    transition: 0.6s;
+    margin: 0 5px;
+}
+
+.selected {
+    width: 30px;
+    background-color: gray;
+    border-radius: 10px;
+}
+
+
