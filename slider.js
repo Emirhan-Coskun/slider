@@ -100,7 +100,7 @@ function fade() {
 
 const displayDotList = (list) => {
     for (let i = 0; i < list; i++) {
-        let liTag = `<li li-index="${i}" onclick="isSelected()" class="dot" id="dot"></li>`;
+        let liTag = `<li li-index="${i}" onclick="" class="dot" id="dot"></li>`;
         ul.insertAdjacentHTML("beforeend", liTag);
     };
 };
@@ -112,10 +112,13 @@ const isSelected = () => {
 function selectedDot() {
     for (let li of ul.querySelectorAll("li")) {
         if (li.classList.contains("selected")) {
-          li.classList.remove("selected");
+            li.classList.remove("selected");
         }
         if (li.getAttribute("li-index") == slider.index) {
-          li.classList.add("selected");
+            li.classList.add("selected");
         }
-      }
+    }
 };
+
+let li = ul.getElementsByClassName("dot");
+
